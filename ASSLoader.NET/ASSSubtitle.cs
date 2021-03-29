@@ -384,10 +384,10 @@ namespace ASSLoader.NET
                     case "SecondaryColour": style.SecondaryColour = value; continue;
                     case "OutlineColour": style.OutlineColour = value; continue;
                     case "BackColour": style.BackColour = value; continue;
-                    case "Bold": style.Bold = Convert.ToInt16(value) == -1; continue;
-                    case "Italic": style.Italic = Convert.ToInt16(value) == -1; continue;
-                    case "Underline": style.Underline = Convert.ToInt16(value) == -1; continue;
-                    case "StrikeOut": style.StrikeOut = Convert.ToInt16(value) == -1; continue;
+                    case "Bold": style.Bold = Convert.ToInt16(value) != 0; continue;
+                    case "Italic": style.Italic = Convert.ToInt16(value) != 0; continue;
+                    case "Underline": style.Underline = Convert.ToInt16(value) != 0; continue;
+                    case "StrikeOut": style.StrikeOut = Convert.ToInt16(value) != 0; continue;
                     case "ScaleX": style.ScaleX = Convert.ToDouble(value); continue;
                     case "ScaleY": style.ScaleY = Convert.ToDouble(value); continue;
                     case "Spacing": style.Spacing = Convert.ToInt32(value); continue;
