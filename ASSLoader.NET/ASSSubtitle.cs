@@ -613,10 +613,10 @@ namespace ASSLoader.NET
             var secIndex = parts.Length - 2;
             var minIndex = parts.Length - 3;
             var hourIndex = parts.Length - 4;
-            this.Hour = hourIndex > 0 ? Convert.ToInt32(parts[hourIndex]) : 0;
-            this.Minute = minIndex > 0 ? Convert.ToInt32(parts[minIndex]) : 0;
-            this.Second = secIndex > 0 ? Convert.ToInt32(parts[secIndex]) : 0;
-            this.Millisecond = msIndex > 0 ? Convert.ToInt32((parts[msIndex] + "000").Substring(0, 3)) : 0;
+            this.Hour = hourIndex >= 0 ? Convert.ToInt32(parts[hourIndex]) : 0;
+            this.Minute = minIndex >= 0 ? Convert.ToInt32(parts[minIndex]) : 0;
+            this.Second = secIndex >= 0 ? Convert.ToInt32(parts[secIndex]) : 0;
+            this.Millisecond = msIndex >= 0 ? Convert.ToInt32((parts[msIndex] + "000").Substring(0, 3)) : 0;
         }
 
         public ASSEventTime(int hour, int minute, int second, int millisecond)
