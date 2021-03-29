@@ -2,6 +2,7 @@ using ASSLoader.NET.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -379,7 +380,7 @@ namespace ASSLoader.NET
                 {
                     case "Name": style.Name = value; continue;
                     case "Fontname": style.Fontname = value; continue;
-                    case "Fontsize": style.Fontsize = Convert.ToDouble(value); continue;
+                    case "Fontsize": style.Fontsize = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "PrimaryColour": style.PrimaryColour = value; continue;
                     case "SecondaryColour": style.SecondaryColour = value; continue;
                     case "OutlineColour": style.OutlineColour = value; continue;
@@ -388,10 +389,10 @@ namespace ASSLoader.NET
                     case "Italic": style.Italic = Convert.ToInt16(value) != 0; continue;
                     case "Underline": style.Underline = Convert.ToInt16(value) != 0; continue;
                     case "StrikeOut": style.StrikeOut = Convert.ToInt16(value) != 0; continue;
-                    case "ScaleX": style.ScaleX = Convert.ToDouble(value); continue;
-                    case "ScaleY": style.ScaleY = Convert.ToDouble(value); continue;
+                    case "ScaleX": style.ScaleX = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
+                    case "ScaleY": style.ScaleY = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "Spacing": style.Spacing = Convert.ToInt32(value); continue;
-                    case "Angle": style.Angle = Convert.ToDouble(value); continue;
+                    case "Angle": style.Angle = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "BorderStyle": style.BorderStyle = (V4pStyleBorderStyle)Convert.ToInt16(value); continue;
                     case "Outline": style.Outline = Convert.ToInt32(value); continue;
                     case "Shadow": style.Shadow = Convert.ToInt32(value); continue;
@@ -419,7 +420,7 @@ namespace ASSLoader.NET
                 {
                     case "Name": sb.Append(style.Name); break;
                     case "Fontname": sb.Append(style.Fontname); break;
-                    case "Fontsize": sb.Append(style.Fontsize); break;
+                    case "Fontsize": sb.Append(style.Fontsize.ToString(CultureInfo.InvariantCulture)); break;
                     case "PrimaryColour": sb.Append(style.PrimaryColour); break;
                     case "SecondaryColour": sb.Append(style.SecondaryColour); break;
                     case "OutlineColour": sb.Append(style.OutlineColour); break;
@@ -428,10 +429,10 @@ namespace ASSLoader.NET
                     case "Italic": sb.Append(style.Italic ? "-1" : "0"); break;
                     case "Underline": sb.Append(style.Underline ? "-1" : "0"); break;
                     case "StrikeOut": sb.Append(style.StrikeOut ? "-1" : "0"); break;
-                    case "ScaleX": sb.Append(style.ScaleX); break;
-                    case "ScaleY": sb.Append(style.ScaleY); break;
+                    case "ScaleX": sb.Append(style.ScaleX.ToString(CultureInfo.InvariantCulture)); break;
+                    case "ScaleY": sb.Append(style.ScaleY.ToString(CultureInfo.InvariantCulture)); break;
                     case "Spacing": sb.Append(style.Spacing); break;
-                    case "Angle": sb.Append(style.Angle); break;
+                    case "Angle": sb.Append(style.Angle.ToString(CultureInfo.InvariantCulture)); break;
                     case "BorderStyle": sb.Append((int)style.BorderStyle); break;
                     case "Outline": sb.Append(style.Outline); break;
                     case "Shadow": sb.Append(style.Shadow); break;
