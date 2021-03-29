@@ -391,11 +391,11 @@ namespace ASSLoader.NET
                     case "StrikeOut": style.StrikeOut = Convert.ToInt16(value) != 0; continue;
                     case "ScaleX": style.ScaleX = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "ScaleY": style.ScaleY = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
-                    case "Spacing": style.Spacing = Convert.ToInt32(value); continue;
+                    case "Spacing": style.Spacing = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "Angle": style.Angle = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "BorderStyle": style.BorderStyle = (V4pStyleBorderStyle)Convert.ToInt16(value); continue;
-                    case "Outline": style.Outline = Convert.ToInt32(value); continue;
-                    case "Shadow": style.Shadow = Convert.ToInt32(value); continue;
+                    case "Outline": style.Outline = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
+                    case "Shadow": style.Shadow = Convert.ToDouble(value, CultureInfo.InvariantCulture); continue;
                     case "Alignment": style.Alignment = (V4pStyleAlignment)Convert.ToInt16(value); continue;
                     case "MarginL": style.MarginL = Convert.ToInt32(value); continue;
                     case "MarginR": style.MarginR = Convert.ToInt32(value); continue;
@@ -431,11 +431,11 @@ namespace ASSLoader.NET
                     case "StrikeOut": sb.Append(style.StrikeOut ? "-1" : "0"); break;
                     case "ScaleX": sb.Append(style.ScaleX.ToString(CultureInfo.InvariantCulture)); break;
                     case "ScaleY": sb.Append(style.ScaleY.ToString(CultureInfo.InvariantCulture)); break;
-                    case "Spacing": sb.Append(style.Spacing); break;
+                    case "Spacing": sb.Append(style.Spacing.ToString(CultureInfo.InvariantCulture)); break;
                     case "Angle": sb.Append(style.Angle.ToString(CultureInfo.InvariantCulture)); break;
                     case "BorderStyle": sb.Append((int)style.BorderStyle); break;
-                    case "Outline": sb.Append(style.Outline); break;
-                    case "Shadow": sb.Append(style.Shadow); break;
+                    case "Outline": sb.Append(style.Outline.ToString(CultureInfo.InvariantCulture)); break;
+                    case "Shadow": sb.Append(style.Shadow.ToString(CultureInfo.InvariantCulture)); break;
                     case "Alignment": sb.Append((int)style.Alignment); break;
                     case "MarginL": sb.Append(style.MarginL); break;
                     case "MarginR": sb.Append(style.MarginR); break;
@@ -492,15 +492,15 @@ namespace ASSLoader.NET
 
         public double ScaleY { get; set; }
 
-        public int Spacing { get; set; }
+        public double Spacing { get; set; }
 
         public double Angle { get; set; }
 
         public V4pStyleBorderStyle BorderStyle { get; set; }
 
-        public int Outline { get; set; }
+        public double Outline { get; set; }
 
-        public int Shadow { get; set; }
+        public double Shadow { get; set; }
 
         public V4pStyleAlignment Alignment { get; set; }
 
